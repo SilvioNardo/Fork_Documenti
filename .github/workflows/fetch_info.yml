@@ -50,9 +50,9 @@ jobs:
           echo "::notice::Path: ${{ steps.path.outputs.file_path }}"
           echo "::notice::Name: ${{ steps.name.outputs.file_name }}"
           echo "::notice::Version: ${{ steps.version.outputs.latest_version }} (current)"
-      #- name: Check number of changed files
-      #  run: |
-       #   if [[ "${{ steps.path.outputs.file_path }}" == *".typ"* ]]; then
-       #     echo "::error::More than one Typst source have been modified. Aborting."
-        #    exit 1
-       #   fi
+      - name: Check number of changed files
+        run: |
+          if [[ "${{ steps.path.outputs.file_path }}" == *".typ"* ]]; then
+            echo "::error::More than one Typst source have been modified. Aborting."
+            exit 1
+          fi
