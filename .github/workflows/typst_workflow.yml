@@ -10,7 +10,7 @@ on:
 
 jobs:
   fetch:
-    uses: Error-418-SWE/Documenti/.github/workflows/fetch_info.yml@src
+    uses: SilvioNardo/Fork_Documenti/.github/workflows/fetch_info.yml@src
 
   log:
     needs: fetch
